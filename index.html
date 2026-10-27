@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mythic Robotics educates and inspires young people through affordable, secular, and inclusive hands-on experiences in science, technology, engineering, the arts, and mathematics.">
+  <meta name="theme-color" content="#000000">
+  <title>Mythic Robotics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      color-scheme: dark;
+      --black: #000;
+      --white: #f7f7f7;
+      --muted: #c5c5c5;
+      --charcoal: #191919;
+      --line: #303030;
+    }
+    * { box-sizing: border-box; }
+    .site-header {
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Almendra", Georgia, serif;
+    }
+    .header-logo {
+      display: block;
+      width: auto;
+      height: 48px;
+      max-width: calc(100% - 170px);
+      object-fit: contain;
+      flex: 0 1 auto;
+    }
+    .team-number {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Source Sans 3", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { width: min(1280px, calc(100% - 40px)); margin: 0 auto; }
+    main { padding: 48px 0 64px; }
+    .hero { text-align: center; padding: 10px 0 42px; }
+    .large-logo {
+      display: block;
+      width: min(100%, 896px);
+      height: auto;
+      margin: 0 auto 22px;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .mission {
+      max-width: 960px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.5vw, 1.22rem);
+    }
+    .activities {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 25px 28px;
+      background: var(--charcoal);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .activities p { margin: 0; color: var(--muted); }
+    .rainbow-rule {
+      width: min(250px, 70%);
+      height: 3px;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+    }
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: #101010;
+      color: var(--muted);
+      padding: 30px 20px 20px;
+      font-size: .88rem;
+    }
+    .footer-inner { width: min(1280px, 100%); margin: 0 auto; }
+    .site-footer .rainbow-rule { margin-bottom: 24px; }
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+    .footer-title {
+      margin: 0 0 8px;
+      color: var(--white);
+      font: 700 1.15rem/1.3 "Almendra", Georgia, serif;
+    }
+    .footer-copy { max-width: 590px; margin: 0; }
+    .footer-copy + .footer-copy { margin-top: 5px; }
+    .footer-follow {
+      display: grid;
+      width: 100%;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: center;
+      justify-self: center;
+    }
+    .footer-email { grid-column: 3; grid-row: 1; justify-self: start; }
+    .site-footer a.footer-email {
+      position: relative;
+      display: inline-block;
+      padding: 4px 8px;
+      margin: -4px -8px;
+      text-decoration: none;
+    }
+    .site-footer a.footer-email::after {
+      position: absolute;
+      right: 8px;
+      bottom: 2px;
+      left: 8px;
+      height: 2px;
+      background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .18s ease;
+    }
+    .site-footer a.footer-email:hover,
+    .site-footer a.footer-email:focus-visible {
+      background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    .site-footer a.footer-email:hover::after,
+    .site-footer a.footer-email:focus-visible::after {
+      transform: scaleX(1);
+    }
+    .footer-contact {
+      justify-self: end;
+      text-align: right;
+      font: inherit;
+      font-style: normal;
+    }
+    .footer-links {
+      display: flex;
+      grid-column: 2;
+      grid-row: 1;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-self: center;
+    }
+    .footer-links a {
+      display: inline-grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid #555;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--white);
+      text-decoration: none;
+      transition: background-color .18s ease, color .18s ease, transform .18s ease;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      border-color: transparent;
+      background: linear-gradient(135deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+      color: #111;
+      transform: translateY(-2px);
+    }
+    .footer-links a:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+    .footer-links svg { display: block; width: 22px; height: 22px; fill: currentColor; }
+    .footer-links .instagram-icon { fill: none; stroke: currentColor; stroke-width: 2; }
+    .site-footer a { color: var(--white); text-underline-offset: 4px; overflow-wrap: anywhere; }
+    .site-footer .rainbow-rule.footer-divider { width: 100%; max-width: none; height: 3px; margin: 22px 0 0; }
+    .footer-trademark { margin: 12px 0 0; font-size: .82rem; }
+    .footer-copyright { margin: 14px 0 0; color: #888; text-align: center; }
+    @media (max-width: 900px) {
+      .footer-main { grid-template-columns: 1fr; gap: 16px; }
+      .footer-follow { justify-self: center; }
+      .footer-contact { justify-self: end; }
+      .footer-follow { width: min(100%, 420px); }
+    }
+    @media (max-width: 520px) {
+      .header-inner { min-height: 52px; gap: 8px; }
+      .header-logo { height: 42px; max-width: calc(100% - 140px); }
+      .team-number { font-size: .9rem; }
+      main { padding-top: 30px; }
+      .activities { padding: 21px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <img class="header-logo" src="banner_logo.png" alt="Mythic">
+      <div>
+        <p class="team-number">FRC Team #11817</p>
+      </div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <img class="large-logo" src="logo.png" alt="Mythic">
+      <h1 class="visually-hidden">Mythic Robotics</h1>
+      <p class="mission">Mythic Robotics educates and inspires young people through affordable, secular, and inclusive hands-on experiences in science, technology, engineering, the arts, and mathematics.</p>
+    </section>
+
+    <section class="activities" aria-label="Programs summary">
+      <p>Our programs include MYTHIC 11817, a FIRST Robotics Competition team, and FIRST LEGO League teams for elementary and middle school students.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="rainbow-rule" aria-hidden="true"></div>
+      <div class="footer-main">
+        <section aria-label="Organization information">
+          <p class="footer-copy">Mythic Robotics is a 501(c)(3) nonprofit organization (EIN: 42-4319954) that operates FIRST® Robotics Competition (FRC) team MYTHIC 11817 in the greater Kansas City area.</p>
+        </section>
+        <nav class="footer-follow" aria-label="Follow Mythic Robotics">
+          <a class="footer-email" href="mailto:info@mythicrobotics.org">info@mythicrobotics.org</a>
+          <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61595108650281" target="_blank" rel="noopener noreferrer" aria-label="Mythic Robotics on Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mythic11817/" target="_blank" rel="noopener noreferrer" aria-label="Mythic Robotics on Instagram" title="Instagram">
+              <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </nav>
+        <address class="footer-contact">31114 S Clement Rd<br>Harrisonville, MO 64701</address>
+      </div>
+      <div class="rainbow-rule footer-divider" aria-hidden="true"></div>
+      <p class="footer-trademark">FIRST® is a registered trademark of For Inspiration and Recognition of Science and Technology (FIRST), which is not affiliated with this website.</p>
+      <p class="footer-copyright">© 2026 Mythic Robotics</p>
+    </div>
+  </footer>
+</body>
+</html>

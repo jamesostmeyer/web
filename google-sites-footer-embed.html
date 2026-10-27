@@ -1,0 +1,221 @@
+<style>
+  #mythic-footer-embed {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 28px 20px 18px;
+    background: #101010;
+    color: #c5c5c5;
+    font: 400 14px/1.55 "Source Sans 3", Arial, sans-serif;
+  }
+
+  #mythic-footer-embed *,
+  #mythic-footer-embed *::before,
+  #mythic-footer-embed *::after {
+    box-sizing: inherit;
+  }
+
+  #mythic-footer-embed .rainbow-rule {
+    width: min(250px, 70%);
+    height: 3px;
+    margin: 0 auto 24px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+  }
+
+  #mythic-footer-embed .footer-inner {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+  }
+
+  #mythic-footer-embed .footer-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 1.4fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+  }
+
+  #mythic-footer-embed .footer-title {
+    margin: 0 0 8px;
+    color: #f7f7f7;
+    font: 700 1.15rem/1.3 "Almendra", Georgia, serif;
+  }
+
+  #mythic-footer-embed .footer-copy {
+    max-width: 760px;
+    margin: 0;
+  }
+
+  #mythic-footer-embed .footer-copy + .footer-copy {
+    margin-top: 5px;
+  }
+
+  #mythic-footer-embed .footer-follow {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: center;
+    justify-self: center;
+  }
+
+  #mythic-footer-embed a.footer-email {
+    position: relative;
+    display: inline-block;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    padding: 4px 8px;
+    margin: -4px -8px;
+    text-decoration: none;
+  }
+
+  #mythic-footer-embed a.footer-email::after {
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+    left: 8px;
+    height: 2px;
+    background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease;
+  }
+
+  #mythic-footer-embed a.footer-email:hover,
+  #mythic-footer-embed a.footer-email:focus-visible {
+    background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #mythic-footer-embed a.footer-email:hover::after,
+  #mythic-footer-embed a.footer-email:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  #mythic-footer-embed .footer-address {
+    justify-self: end;
+    margin: 0;
+    font: inherit;
+    font-style: normal;
+    text-align: right;
+  }
+
+  #mythic-footer-embed .footer-links {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-self: center;
+  }
+
+  #mythic-footer-embed .footer-links a {
+    display: inline-grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background: #191919;
+    color: #f7f7f7;
+    text-decoration: none;
+    transition: background-color .18s ease, color .18s ease, transform .18s ease;
+  }
+
+  #mythic-footer-embed .footer-links a:hover,
+  #mythic-footer-embed .footer-links a:focus-visible {
+    border-color: transparent;
+    background: linear-gradient(135deg, #f44336, #ff9800, #ffeb3b, #4caf50, #03a9f4, #673ab7);
+    color: #111;
+    transform: translateY(-2px);
+  }
+
+  #mythic-footer-embed .footer-links a:focus-visible {
+    outline: 2px solid #f7f7f7;
+    outline-offset: 3px;
+  }
+
+  #mythic-footer-embed .footer-links svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  #mythic-footer-embed .footer-links .instagram-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  #mythic-footer-embed .rainbow-rule.footer-divider {
+    width: 100%;
+    max-width: none;
+    height: 3px;
+    margin: 22px 0 0;
+  }
+
+  #mythic-footer-embed a {
+    color: #f7f7f7;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+  }
+
+  #mythic-footer-embed .footer-trademark {
+    margin: 12px 0 0;
+    font-size: .82rem;
+  }
+
+  #mythic-footer-embed .footer-copyright {
+    margin: 14px 0 0;
+    color: #888;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    #mythic-footer-embed .footer-main {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    #mythic-footer-embed .footer-follow {
+      width: min(100%, 420px);
+      justify-self: center;
+    }
+
+    #mythic-footer-embed .footer-address {
+      justify-self: end;
+    }
+  }
+</style>
+
+<footer id="mythic-footer-embed">
+  <div class="footer-inner">
+    <div class="rainbow-rule" aria-hidden="true"></div>
+    <div class="footer-main">
+      <section aria-label="Organization information">
+        <p class="footer-title">Mythic Robotics</p>
+        <p class="footer-copy">Mythic Robotics is a 501(c)(3) nonprofit organization (EIN: 42-4319954) that operates FIRST® Robotics Competition team MYTHIC 11817 in the greater Kansas City area.</p>
+        <p class="footer-copy">This website and the mythicrobotics.org domain are operated by Mythic Robotics.</p>
+      </section>
+      <nav class="footer-follow" aria-label="Follow Mythic Robotics">
+        <a class="footer-email" href="mailto:info@mythicrobotics.org">info@mythicrobotics.org</a>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/profile.php?id=61595108650281" target="_blank" rel="noopener noreferrer" aria-label="Mythic Robotics on Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/mythic11817/" target="_blank" rel="noopener noreferrer" aria-label="Mythic Robotics on Instagram" title="Instagram">
+            <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </nav>
+      <address class="footer-address">31114 S Clement Rd<br>Harrisonville, MO 64701</address>
+    </div>
+    <div class="rainbow-rule footer-divider" aria-hidden="true"></div>
+    <p class="footer-trademark">FIRST® is a registered trademark of For Inspiration and Recognition of Science and Technology (FIRST), which is not affiliated with this website.</p>
+    <p class="footer-copyright">© 2026 Mythic Robotics</p>
+  </div>
+</footer>
